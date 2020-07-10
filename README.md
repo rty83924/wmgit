@@ -3,6 +3,10 @@
 ```py
 工作目錄下新增config.py
 class config:
+    #tbonline user
+    tbuser = ''
+    #tbonline passwd
+    tbpasswd = ''
     user = '${user}'
     passwd = '${password}'
     domain = '${git_domain}'
