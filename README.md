@@ -7,11 +7,17 @@ class config:
     tbuser = ''
     #tbonline passwd
     tbpasswd = ''
+    #後台API user
     user = '${user}'
+    #後台API passwd
     passwd = '${password}'
+    #domain
     domain = '${git_domain}'
+    #文件層
     worktree = '${path}'
+    #git clone層
     gitpath = '${git_path}'
+    #rsync conf層
     conf_path = '${shell_config_path}'
     #是否為正式環境
     office = False
