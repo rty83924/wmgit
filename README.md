@@ -17,11 +17,4 @@ class config:
     office = False
 
 ```
-* git path
-```
-git init
-git config core.sparseCheckout true
-echo 'wmgit/*' > .git/info/sparse-checkout 
-git remote add origin https://github.com/rty83924/xin.git
-git pull origin master
-```
+
