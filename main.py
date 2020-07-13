@@ -12,6 +12,7 @@ if __name__ == "__main__":
     worktree = config.worktree
     gitpath = config.gitpath
     conf_path = config.conf_path
+    series = config.series
     office = config.office
     while True:
         pro = '%s' % git.WM().pro()
@@ -21,9 +22,9 @@ if __name__ == "__main__":
             if j == 'tbonline':
                 url = ('http://{u}:{p}@{d}/a168/{a}.git'.format(u=tbuser, p=tbpasswd, a=j, d=domain))
             elif j == 'ag':
-                url = ('http://{u}:{p}@{d}/gala/a168-w1.git'.format(u=user, p=passwd, r=pro, a=j, d=domain))
+                url = ('http://{u}:{p}@{d}/gala/a168-{s}.git'.format(u=user, p=passwd, r=pro, a=j, d=domain, s=series))
             else:
-                url = ('http://{u}:{p}@{d}/gala/{a}-w1.git'.format(u=user, p=passwd, r=pro, a=j, d=domain))
+                url = ('http://{u}:{p}@{d}/gala/{a}-{s}.git'.format(u=user, p=passwd, r=pro, a=j, d=domain, s=series))
             gitdownload = git.gitdownload(url=url, project=pro, app=j, gitpath=gitpath, worktree=worktree, office=office)
             gitdownload.clone()
             gitdownload.checkout()
