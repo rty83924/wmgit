@@ -6,6 +6,7 @@ class gitdownload:
         self.app = app
         self.project = project
         self.branch = ''
+        self.tbbranch = ''
         if self.app == 'tbonline':
             self.worktree = worktree
             self.gitpath = gitpath
@@ -27,18 +28,20 @@ class gitdownload:
             print('clone false')
             exit()
     def checkout(self):
-        if self.app == 'tbonline':
-            pass
-        else:
-            if self.office == True:
-                self.branch = '{}-{}'.format(self.project, self.app)
-            elif self.office == False:
-                self.branch = '{}-{}-test'.format(self.project, self.app)
-            os.chdir('{}/{}'.format(self.gitpath, self.app))
-            try:
+        if self.office == True:
+            self.branch = '{}-{}'.format(self.project, self.app)
+            self.tbbranch = 'master'
+        elif self.office == False:
+            self.branch = '{}-{}-test'.format(self.project, self.app)
+            self.tbbranch = 'Beta'
+        os.chdir('{}/{}'.format(self.gitpath, self.app))
+        try:
+            if self.app == 'tbonline':
+                os.system('git checkout {}'.format(self.tbbranch))
+            else:                
                 os.system('git checkout {}'.format(self.branch))
-            except OSError as e:
-                print(e)
+        except OSError as e:
+            print(e)
     def changepath(self):
         #判斷目錄不存在
         if not os.path.exists('{}/{}'.format(self.worktree, self.app)):
