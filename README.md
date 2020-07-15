@@ -19,6 +19,8 @@ class config:
     gitpath = '${git_path}'
     #rsync conf層
     conf_path = '${shell_config_path}'
+    #專案類別
+    series = ''
     #是否為正式環境
     office = False
 
