@@ -19,7 +19,7 @@ if __name__ == "__main__":
         app = git.WM().apps()
         #url = list()
         for j in app:
-            if j == 'tbonline':
+            if j == 'tbonline' or j == 'tb-client':
                 url = ('http://{u}:{p}@{d}/a168/{a}.git'.format(u=tbuser, p=tbpasswd, a=j, d=domain))
             elif j == 'ag':
                 url = ('http://{u}:{p}@{d}/gala/a168-{s}.git'.format(u=user, p=passwd, r=pro, a=j, d=domain, s=series))
